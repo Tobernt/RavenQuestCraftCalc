@@ -56,7 +56,7 @@ def statistics():
     loss_items.sort(key=lambda x: x["loss"])  # Most negative margin first
     return render_template("statistics.html", items=loss_items)
 
-# ✅ This is the key part for hosting!
+# This is the key part for hosting!
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render will set $PORT
     app.run(host="0.0.0.0", port=port)
