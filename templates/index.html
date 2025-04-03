@@ -12,17 +12,18 @@
             <tbody id="recipe-table">
                 <tr>
                     <td>
-                        <select class="item-select">
+                        <select class="item-select" style="width: 100%;">
                             {% for item in items %}
                                 <option value="{{ item }}">{{ item }}</option>
                             {% endfor %}
                         </select>
                     </td>
                     <td><input type="number" min="1" value="1" class="qty-input"></td>
-                    <td><button onclick="removeRow(this)">❌</button></td>
+                    <td><button onclick="this.closest('tr').remove()">❌</button></td>
                 </tr>
             </tbody>
         </table>
+
         <button onclick="addRow()">➕ Add Material</button>
         <button onclick="calculate()">🧮 Calculate</button>
 
@@ -51,50 +52,85 @@
     <a href="/statistics">📊 Go to Statistics Page</a>
 </div>
 
+<!-- Scripts -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <script>
-function addRow() {
-    const row = document.querySelector("#recipe-table tr").cloneNode(true);
-    row.querySelector(".qty-input").value = 1;
-    document.querySelector("#recipe-table").appendChild(row);
-}
+    const itemOptions = {{ items | tojson }};
 
-function removeRow(btn) {
-    const rows = document.querySelectorAll("#recipe-table tr");
-    if (rows.length > 1) btn.closest("tr").remove();
-}
+    function createSelectElement() {
+        const select = document.createElement("select");
+        select.className = "item-select";
+        select.style.width = "100%";
+        itemOptions.forEach(item => {
+            const option = document.createElement("option");
+            option.value = item;
+            option.textContent = item;
+            select.appendChild(option);
+        });
+        return select;
+    }
 
-async function calculate() {
-    const rows = document.querySelectorAll("#recipe-table tr");
-    const recipe = {};
-    rows.forEach(row => {
-        const item = row.querySelector(".item-select").value;
-        const qty = parseInt(row.querySelector(".qty-input").value);
-        if (item && qty > 0) {
-            recipe[item] = (recipe[item] || 0) + qty;
-        }
+    function addRow() {
+        const row = document.createElement("tr");
+
+        // Item select
+        const tdItem = document.createElement("td");
+        const select = createSelectElement();
+        tdItem.appendChild(select);
+
+        // Quantity input
+        const tdQty = document.createElement("td");
+        const qtyInput = document.createElement("input");
+        qtyInput.type = "number";
+        qtyInput.min = 1;
+        qtyInput.value = 1;
+        qtyInput.className = "qty-input";
+        tdQty.appendChild(qtyInput);
+
+        // Remove button
+        const tdRemove = document.createElement("td");
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "❌";
+        removeBtn.onclick = () => row.remove();
+        tdRemove.appendChild(removeBtn);
+
+        row.appendChild(tdItem);
+        row.appendChild(tdQty);
+        row.appendChild(tdRemove);
+
+        document.getElementById("recipe-table").appendChild(row);
+
+        // Apply Select2
+        $(select).select2({ width: '100%' });
+    }
+
+    async function calculate() {
+        const rows = document.querySelectorAll("#recipe-table tr");
+        const recipe = {};
+        rows.forEach(row => {
+            const item = row.querySelector(".item-select").value;
+            const qty = parseInt(row.querySelector(".qty-input").value);
+            if (item && qty > 0) {
+                recipe[item] = (recipe[item] || 0) + qty;
+            }
+        });
+
+        const response = await fetch("/calculate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ recipe })
+        });
+
+        const data = await response.json();
+        document.getElementById("total-sell-cost").innerText = data.sell_cost;
+        document.getElementById("total-buy-cost").innerText = data.buy_cost;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        $('.item-select').select2({ width: '100%' });
     });
-
-    const response = await fetch("/calculate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ recipe: recipe })
-    });
-
-    const data = await response.json();
-    document.getElementById("total-sell-cost").innerText = data.sell_cost;
-    document.getElementById("total-buy-cost").innerText = data.buy_cost;
-}
-document.addEventListener("DOMContentLoaded", function () {
-    // Make all selects searchable
-    $('.item-select').select2();
-
-    // Reapply Select2 for dynamically added rows
-    document.querySelector("button[onclick='addRow()']").addEventListener("click", () => {
-        setTimeout(() => {
-            $('.item-select').select2();
-        }, 10);
-    });
-});
-
 </script>
 {% endblock %}
