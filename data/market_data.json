@@ -48,7 +48,7 @@
     "sell": 153
   },
   "Onion": {
-    "buy": 7,
+    "buy": 70,
     "sell": 135
   },
   "Strawberry": {
@@ -72,7 +72,7 @@
     "sell": 742
   },
   "Pea": {
-    "buy": 7,
+    "buy": 70,
     "sell": 117
   },
   "Moonberry": {
@@ -156,7 +156,7 @@
     "sell": 56
   },
   "Salt": {
-    "buy": 2,
+    "buy": 20,
     "sell": 20
   },
   "Stone": {
