@@ -1,178 +1,178 @@
 {
   "Potato": {
-    "buy": 38,
+    "buy": 39,
     "sell": 36
   },
   "Cotton": {
-    "buy": 172,
-    "sell": 178
+    "buy": 162,
+    "sell": 175
   },
   "Wheat": {
-    "buy": 61,
-    "sell": 73
+    "buy": 67,
+    "sell": 76
   },
   "Corn": {
-    "buy": 128,
+    "buy": 105,
     "sell": 138
   },
   "Apple": {
-    "buy": 183,
-    "sell": 200
+    "buy": 150,
+    "sell": 190
   },
   "Carrot": {
-    "buy": 50,
-    "sell": 68
+    "buy": 28,
+    "sell": 40
   },
   "Grape": {
-    "buy": 122,
-    "sell": 156
+    "buy": 150,
+    "sell": 162
   },
   "Blueberry": {
-    "buy": 32,
-    "sell": 43
+    "buy": 28,
+    "sell": 38
   },
   "Cabbage": {
     "buy": 89,
-    "sell": 127
+    "sell": 115
   },
   "Orange": {
-    "buy": 334,
-    "sell": 488
+    "buy": 500,
+    "sell": 399
   },
   "Cherry": {
-    "buy": 271,
-    "sell": 385
+    "buy": 280,
+    "sell": 344
   },
   "Pepper": {
-    "buy": 161,
-    "sell": 170
+    "buy": 150,
+    "sell": 153
   },
   "Onion": {
-    "buy": 76,
-    "sell": 128
+    "buy": 7,
+    "sell": 135
   },
   "Strawberry": {
-    "buy": 55,
-    "sell": 69
+    "buy": 50,
+    "sell": 67
   },
   "Bean": {
     "buy": 62,
-    "sell": 87
+    "sell": 7
   },
   "Banana": {
-    "buy": 420,
-    "sell": 579
+    "buy": 650,
+    "sell": 73
   },
   "Pumpkin": {
-    "buy": 310,
-    "sell": 850
+    "buy": 400,
+    "sell": 829
   },
   "Watermelon": {
-    "buy": 1105,
-    "sell": 1379
+    "buy": 371,
+    "sell": 742
   },
   "Pea": {
     "buy": 7,
-    "sell": 132
+    "sell": 117
   },
   "Moonberry": {
-    "buy": 132,
-    "sell": 594
+    "buy": 200,
+    "sell": 386
   },
   "Garlic": {
-    "buy": 88,
-    "sell": 998
+    "buy": 800,
+    "sell": 1080
   },
   "Acorn": {
     "buy": 533,
-    "sell": 5000
+    "sell": 8000
   },
   "Brocolli": {
-    "buy": "N/A",
-    "sell": "N/A"
+    "buy": 80,
+    "sell": 1000
   },
   "Sunberry": {
     "buy": "N/A",
     "sell": "N/A"
   },
   "Small Log": {
-    "buy": 64,
-    "sell": 67
+    "buy": 54,
+    "sell": 59
   },
   "Heavy Log": {
-    "buy": 106,
-    "sell": 74
+    "buy": 113,
+    "sell": 120
   },
   "Shank": {
-    "buy": 325,
-    "sell": 350
+    "buy": 405,
+    "sell": 256
   },
   "Hide": {
-    "buy": 163,
-    "sell": 164
+    "buy": 175,
+    "sell": 141
   },
   "Spool Of Hair": {
-    "buy": 121,
-    "sell": 122
+    "buy": 135,
+    "sell": 125
   },
   "Chicken": {
-    "buy": 140,
-    "sell": 215
+    "buy": 150,
+    "sell": 230
   },
   "Egg": {
-    "buy": 90,
-    "sell": 18
+    "buy": 100,
+    "sell": 99
   },
   "Milk": {
-    "buy": 225,
-    "sell": 244
+    "buy": 205,
+    "sell": 161
   },
   "Feather": {
-    "buy": 295,
-    "sell": 374
+    "buy": 302,
+    "sell": 448
   },
   "Wool": {
-    "buy": 231,
-    "sell": 282
+    "buy": 234,
+    "sell": 270
   },
   "Beef": {
-    "buy": 250,
-    "sell": 366
+    "buy": 20,
+    "sell": 247
   },
   "Cheese": {
-    "buy": 450,
-    "sell": 885
+    "buy": 600,
+    "sell": 716
   },
   "Honey": {
     "buy": 150,
-    "sell": 229
+    "sell": 216
   },
   "Coal": {
-    "buy": 82,
-    "sell": 93
+    "buy": 110,
+    "sell": 108
   },
   "Copper Ore": {
-    "buy": 47,
-    "sell": 50
+    "buy": 54,
+    "sell": 56
   },
   "Salt": {
-    "buy": 20,
+    "buy": 2,
     "sell": 20
   },
   "Stone": {
-    "buy": "N/A",
+    "buy": 20,
     "sell": 20
   },
   "Ground Flour": {
-    "buy": 250,
-    "sell": 290
+    "buy": 100,
+    "sell": 335
   },
   "Oil": {
-    "buy": 702,
-    "sell": 845
+    "buy": 750,
+    "sell": 835
   },
   "Copper Ingot": {
-    "buy": 205,
-    "sell": 236
+    "buy": 162,
+    "sell": 209
   }
 }
