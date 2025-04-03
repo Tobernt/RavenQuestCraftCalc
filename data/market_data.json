@@ -57,11 +57,11 @@
   },
   "Bean": {
     "buy": 62,
-    "sell": 7
+    "sell": 75
   },
   "Banana": {
     "buy": 650,
-    "sell": 73
+    "sell": 473
   },
   "Pumpkin": {
     "buy": 400,
